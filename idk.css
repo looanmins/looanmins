@@ -1,0 +1,355 @@
+/* General Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    display: flex;
+    background: #f0f0f0;
+    color: #333;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 250px;
+    background-color: #2b2b2b;
+    color: white;
+    height: 100vh;
+    padding-top: 20px;
+    position: fixed;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1);
+    transition: width 0.3s;
+}
+
+.sidebar:hover {
+    width: 300px;
+}
+
+.sidebar h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.sidebar ul li {
+    padding: 15px 20px;
+    text-align: center;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li:hover {
+    background-color: #575757;
+}
+
+.sidebar ul li a {
+    display: block;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.sidebar ul li a:hover {
+    transform: scale(1.1);
+    color: #ffcc00;
+}
+
+/* Content Styles */
+.content {
+    margin-left: 250px;
+    padding: 20px;
+    width: calc(100% - 250px);
+    transition: margin-left 0.3s, width 0.3s;
+}
+
+.sidebar:hover + .content {
+    margin-left: 300px;
+    width: calc(100% - 300px);
+}
+
+/* Header Styles */
+.header {
+    background-color: #4b8bbe;
+    color: white;
+    padding: 40px 20px;
+    text-align: center;
+    animation: fadeIn 2s;
+    border-bottom: 5px solid #ffcc00;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.header h1 {
+    font-size: 3em;
+    margin: 0;
+    animation: slideInFromTop 1s ease-out;
+}
+
+/* Section Styles */
+.main-section {
+    margin-top: 20px;
+    padding: 30px 20px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: slideIn 1s ease-in-out;
+}
+
+.main-section:nth-child(even) {
+    animation: slideInRight 1s ease-in-out;
+}
+
+.main-section h2 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.main-section p {
+    line-height: 1.6;
+}
+
+/* Footer Styles */
+.footer {
+    margin-top: 40px;
+    padding: 20px;
+    background-color: #2b2b2b;
+    color: white;
+    text-align: center;
+    border-top: 5px solid #ffcc00;
+    box-shadow: 0 -4px 10px rgba(0,0,0,0.1);
+    animation: fadeIn 2s;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(-50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Additional Styles for High Quality */
+.sidebar ul li::before {
+    content: "»";
+    color: #ffcc00;
+    margin-right: 10px;
+    transition: margin-right 0.3s;
+}
+
+.sidebar ul li:hover::before {
+    margin-right: 20px;
+}
+
+.header::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 5px;
+    background: #ffcc00;
+    margin: 20px auto 0;
+    border-radius: 5px;
+}
+
+.main-section p {
+    position: relative;
+    padding-left: 20px;
+}
+
+.main-section p::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #4b8bbe;
+    font-size: 1.5em;
+    line-height: 1;
+    top: 0.1em;
+}
+
+.main-section:nth-child(even) p::before {
+    color: #ffcc00;
+}
+
+.main-section h2 {
+    position: relative;
+}
+
+.main-section h2::after {
+    content: '';
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: #4b8bbe;
+    margin-top: 10px;
+    border-radius: 5px;
+}
+
+.main-section:nth-child(even) h2::after {
+    background: #ffcc00;
+}
+
+.footer::before {
+    content: '▲';
+    display: block;
+    color: #ffcc00;
+    font-size: 2em;
+    margin: 0 auto 10px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+    word-spacing: 2px;
+}
+
+/* Additional hover effects */
+.sidebar ul li:hover {
+    cursor: pointer;
+    background-color: #444;
+}
+
+.sidebar ul li a:hover {
+    color: #ffcc00;
+}
+
+.sidebar ul li:hover::before {
+    color: #ffcc00;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 200px;
+    }
+
+    .sidebar:hover {
+        width: 250px;
+    }
+
+    .content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+
+    .sidebar:hover + .content {
+        margin-left: 250px;
+        width: calc(100% - 250px);
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 150px;
+    }
+
+    .sidebar:hover {
+        width: 200px;
+    }
+
+    .content {
+        margin-left: 150px;
+        width: calc(100% - 150px);
+    }
+
+    .sidebar:hover + .content {
+        margin-left: 200px;
+        width: calc(100% - 200px);
+    }
+}
+
+/* Further Additional Styles for High Quality */
+.main-section img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    animation: fadeIn 2s;
+}
+
+.sidebar .logo {
+    display: block;
+    margin: 0 auto 20px;
+    width: 80px;
+    height: auto;
+    animation: rotateIn 2s;
+}
+
+@keyframes rotateIn {
+    from {
+        transform: rotate(-360deg);
+    }
+    to {
+        transform: rotate(0deg);
+    }
+}
+
+.header button {
+    background: #ffcc00;
+    border: none;
+    color: #2b2b2b;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.header button:hover {
+    background: #e6b800;
+    transform: scale(1.1);
+}
+
+.header button:active {
+    transform: scale(1);
+}
+
+.footer a {
+    color: #ffcc00;
+    text-decoration: underline;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: white;
+}

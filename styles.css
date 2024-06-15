@@ -1,0 +1,28 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+#windows {
+    width: 800px;
+    height: 600px;
+    background-color: #008080; /* Windows 98 배경색 */
+    position: relative;
+}
+
+#taskbar {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    background-color: #808080; /* 작업 표시줄 배경색 */
+}
+
+.start-button {
+    width: 40px;
+    height: 100%;
+    background-image: url('start-button-icon.png');
+    background-repeat: no-repeat;
+    background-position: center;
+    cursor: pointer;
+}

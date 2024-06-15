@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows 98 Start</title>
+</head>
+<body>
+    <input type="button" id="startButton" value="Start" onclick="startWindows()">
+    <audio id="windowsStartupSound" src="o95.wav"></audio>
+    <script>
+        function startWindows() {
+            var audio = document.getElementById("windowsStartupSound");
+            audio.play();
+            // 새 창 열기
+            var newWindow = window.open("windows98.html", "_blank", "width=600,height=600");
+            // 윈도우 창 위치 조정
+            newWindow.moveTo(100, 100);
+        }
+    </script>
+</body>
+</html>
